@@ -1,4 +1,7 @@
-WWHOUSE(Warehouse system)
+WWHOUSE(Developing)
+
+About:
+ - This project is a warehouse system.
 
 For:
  - Manage products in the warehouse by adding, deleting, and editing them.
