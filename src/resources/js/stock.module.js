@@ -1,6 +1,6 @@
 class Stock {
   async getProducts() {
-    const response = await fetch('http://localhost:8888/stock/products/get');
+    const response = await fetch('http://localhost:8000/stock/products/get');
     return this.fetchData(response);
   }
 

@@ -7,9 +7,11 @@ services:
     depends_on:
       - db
     ports: 
-      - '8888:80'
+      - '8000:80'
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
     volumes:
-      - ./src:/var/www/html/
+      - ./src:/var/www/html
       - ./config/apache2.conf:/etc/apache2/apache2.conf
     networks:
       - my-network
@@ -18,10 +20,10 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: n@mty
-      MYSQL_DATABASE: picksome999
+      MYSQL_ROOT_PASSWORD: ww@house
+      MYSQL_DATABASE: wwhouse
       MYSQL_USER: admin
-      MYSQL_PASSWORD: 1234
+      MYSQL_PASSWORD: Admin1234
     ports:
       - "9906:3306"
     volumes:
@@ -33,13 +35,13 @@ services:
     container_name: phpmyadmin
     image: phpmyadmin/phpmyadmin
     ports:
-      - "8000:80"
+      - "8080:80"
     restart: always
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
-      PMA_USER: root
-      PMA_PASSWORD: n@mty
+      PMA_USER: admin
+      PMA_PASSWORD: Admin1234
     depends_on:
       - db
     networks:
